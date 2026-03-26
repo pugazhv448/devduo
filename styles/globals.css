@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0D2440;
+  --card: #2E5E99;
+  --accent: #7BA4D0;
+  --light: #E7F0FA;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: auto; }
+
+body {
+  background: var(--primary);
+  color: var(--light);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+
+
+/* ─── Glassmorphism ─── */
+.glass {
+  background: rgba(46,94,153,0.12);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(123,164,208,0.15);
+}
+.glass-strong {
+  background: rgba(46,94,153,0.25);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(123,164,208,0.25);
+}
+
+/* ─── Noise Grain Overlay ─── */
+.noise-overlay {
+  position: fixed; inset: 0; pointer-events: none;
+  z-index: 9997; opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--primary); }
+::-webkit-scrollbar-thumb { background: var(--card); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ─── Typography ─── */
+.heading-xl {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: 800; line-height: 0.95; letter-spacing: -0.03em;
+}
+.heading-lg {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 700; line-height: 1; letter-spacing: -0.02em;
+}
+.heading-md {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2.5rem);
+  font-weight: 600; line-height: 1.1;
+}
+
+/* ─── Gradients ─── */
+.text-gradient {
+  background: linear-gradient(135deg, #E7F0FA 0%, #7BA4D0 50%, #2E5E99 100%);
+  -webkit-background-clip: text; 
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-accent {
+  background: linear-gradient(135deg, #7BA4D0 0%, #E7F0FA 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Tag Pill ─── */
+.tag-pill {
+  display: inline-flex; align-items: center;
+  padding: 0.35rem 1rem; border-radius: 100px;
+  font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: rgba(123,164,208,0.1);
+  border: 1px solid rgba(123,164,208,0.25);
+  color: var(--accent);
+}
+
+/* ─── Form Inputs ─── */
+.form-input {
+  background: rgba(46,94,153,0.1);
+  border: 1px solid rgba(123,164,208,0.2);
+  border-radius: 12px; padding: 1rem 1.25rem;
+  color: var(--light); font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem; width: 100%;
+  transition: border-color 0.3s, box-shadow 0.3s; outline: none;
+}
+.form-input::placeholder { color: rgba(231,240,250,0.35); }
+.form-input:focus {
+  border-color: rgba(123,164,208,0.6);
+  box-shadow: 0 0 0 3px rgba(123,164,208,0.1);
+}
+
+/* ─── WhatsApp Float ─── */
+.whatsapp-float {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 1000;
+  width: 56px; height: 56px; background: #25D366;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.6);
+}
+
+/* ─── Preloader ─── */
+.preloader {
+  position: fixed; inset: 0; background: var(--primary);
+  z-index: 10000; display: flex; align-items: center;
+  justify-content: center; flex-direction: column; gap: 2rem;
+}
+
+/* ─── Glow Border ─── */
+.glow-border { position: relative; }
+.glow-border::after {
+  content: ''; position: absolute; inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(123,164,208,0.5), transparent, rgba(123,164,208,0.5));
+  z-index: -1; opacity: 0; transition: opacity 0.4s;
+}
+.glow-border:hover::after { opacity: 1; }
+
+/* ─── Sections ─── */
+.section-pad { padding: 6rem 0; }
+@media (max-width: 768px) { .section-pad { padding: 4rem 0; } }
