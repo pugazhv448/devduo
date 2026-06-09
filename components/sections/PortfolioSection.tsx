@@ -59,29 +59,16 @@ const projects = [
   },
   {
     id: 5,
-    title: "Bloom Boutique",
-    category: "Landing Page",
-    client: "Bloom Fashion",
-    location: "Anna Nagar, Chennai",
-    description: "A sleek e-commerce landing page for a Chennai fashion boutique. Features product showcases, WhatsApp order CTA, Instagram feed embed, and a vibrant pastel aesthetic.",
-    tech: ["Next.js", "Tailwind CSS", "GSAP"],
-    image_gradient: "from-pink-900/60 via-rose-900/40 to-gray-900",
-    image: "/images/portfolio/bloom.png",
-    icon: "🌸",
-    url: "#",
-  },
-  {
-    id: 7,
-    title: "Priya Photography",
-    category: "Portfolio",
-    client: "Priya S. Photography",
+    title: "Neilgen Housing",
+    category: "Business",
+    client: "Neilgen Housing",
     location: "Chennai",
-    description: "A minimal, stunning portfolio for a Chennai wedding photographer. Masonry gallery, full-screen lightbox, pricing packages, client testimonials, and a clean inquiry form.",
+    description: "A premium real estate website featuring strategic plot locations, lifestyle-driven amenities, and clear legal transparency for buyers.",
     tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    image_gradient: "from-amber-900/60 via-yellow-900/40 to-gray-900",
-    image: "/images/portfolio/priya.png",
-    icon: "📸",
-    url: "#",
+    image_gradient: "from-blue-900/60 via-cyan-900/40 to-gray-900",
+    image: "/images/portfolio/neilgen.png",
+    icon: "🏢",
+    url: "https://neilgenhousing.com/",
   },
 ];
 
@@ -311,12 +298,13 @@ export default function PortfolioSection() {
                     🌐 Visit Live Site &rarr;
                   </a>
                   <a
-                    href="https://wa.me/917894561230"
+                    href="https://wa.me/917339097430"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full px-6 py-4 rounded-xl bg-[#25D366] text-white text-center font-bold shadow-[0_4px_20px_rgba(37,211,102,0.3)] hover:scale-[1.02] hover:shadow-[0_4px_30px_rgba(37,211,102,0.5)] transition-all duration-300"
+                    className="w-full px-6 py-4 rounded-xl bg-[#25D366] text-white text-center font-bold shadow-[0_4px_20px_rgba(37,211,102,0.3)] hover:scale-[1.02] hover:shadow-[0_4px_30px_rgba(37,211,102,0.5)] transition-all duration-300 flex items-center justify-center gap-2"
                   >
-                    💬 Chat on WhatsApp &rarr;
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.0003 2.01636C6.47198 2.01636 1.98438 6.50396 1.98438 12.0323C1.98438 13.7997 2.44391 15.4593 3.24867 16.8951L2.03154 21.3436L6.58694 20.1481C7.98687 20.8872 9.58572 21.2894 11.2828 21.2894C17.5255 21.2665 22.0146 16.7789 22.0146 11.249C22.0146 5.72068 17.527 1.23308 11.9987 1.23308V2.01636H12.0003ZM16.8152 14.8878C16.6111 15.4608 15.8078 15.9388 15.176 16.0827C14.7171 16.1843 14.0622 16.2625 11.4116 15.1633C8.42159 13.9213 6.49132 10.8711 6.33703 10.6669C6.18274 10.4627 5.06834 8.98394 5.06834 7.45326C5.06834 5.92257 5.84961 5.17725 6.16738 4.8504M6.48673 4.5427C6.6908 4.33842 7.04283 4.23467 7.35122 4.23467C7.45326 4.23467 7.54512 4.23943 7.625 4.24436C7.81893 4.25458 7.91557 4.2699 8.0435 4.57628C8.19662 4.95423 8.57467 5.86221 8.61494 5.94396C8.6552 6.0257 8.71536 6.14815 8.6552 6.27076C8.59505 6.39336 8.5447 6.46467 8.44265 6.58694C8.34061 6.70938 8.24874 6.79153 8.1467 6.924C8.04466 7.05648 7.93297 7.1895 8.05477 7.39414C8.17658 7.59877 8.57467 8.25203 9.1666 8.78208C9.93233 9.46654 10.5546 9.68114 10.7797 9.77256C11.0048 9.86399 11.1378 9.85437 11.2705 9.71158C11.403 9.5688 11.832 9.06869 11.9753 8.8644C12.1185 8.66012 12.2619 8.68007 12.4552 8.76182C12.6485 8.84357 13.6749 9.35417 13.8887 9.45621C14.1026 9.55826 14.246 9.60942 14.2964 9.69116C14.3467 9.77291 14.3467 10.1504 14.1432 10.7233V10.7233" /></svg>
+                    Chat on WhatsApp &rarr;
                   </a>
                 </div>
               </div>

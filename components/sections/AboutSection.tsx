@@ -42,7 +42,7 @@ export default function AboutSection() {
       <div className="absolute top-0 right-0 w-[40vw] h-[40vw] rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[30vw] h-[30vw] rounded-full bg-card/10 blur-[100px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative z-10 flex flex-col gap-20">
+      <div className="max-w-7xl mx-auto relative z-10 flex flex-col gap-12 md:gap-20">
         
         {/* Row 1: Header */}
         <motion.div
@@ -57,7 +57,7 @@ export default function AboutSection() {
         </motion.div>
 
         {/* Row 2: Two columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           
           {/* LEFT: Text & Skills */}
           <motion.div
@@ -114,7 +114,7 @@ export default function AboutSection() {
               transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
               className="absolute -top-6 -right-6 z-20 glass-strong border border-accent/40 rounded-2xl p-4 shadow-2xl backdrop-blur-md"
             >
-              <span className="block text-2xl font-bold font-display text-gradient mb-1">50+</span>
+              <span className="block text-2xl font-bold font-display text-gradient mb-1">5+</span>
               <span className="text-xs uppercase tracking-wider text-light/60 font-semibold">Projects</span>
             </motion.div>
             
@@ -183,7 +183,7 @@ export default function AboutSection() {
         {/* Row 3: Stats bar */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { target: 50, suffix: '+', title: 'Projects Completed', desc: 'Websites delivered across industries', icon: '◈' },
+            { target: 5, suffix: '+', title: 'Projects Completed', desc: 'Websites delivered across industries', icon: '◈' },
             { target: 40, suffix: '+', title: 'Happy Clients', desc: 'Businesses we\'ve helped grow', icon: '◉' },
             { target: 7, suffix: 'd', title: 'Fast Delivery', desc: 'Average project turnaround', icon: '⬡' },
             { target: 3, suffix: 'x', title: 'Traffic Growth', desc: 'Average client traffic increase', icon: '◇' },

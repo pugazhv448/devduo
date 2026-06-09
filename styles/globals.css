@@ -112,7 +112,7 @@ body {
 .whatsapp-float {
   position: fixed; bottom: 2rem; right: 2rem; z-index: 1000;
   width: 56px; height: 56px; background: #25D366;
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  border-radius: 14px; display: flex; align-items: center; justify-content: center;
   box-shadow: 0 4px 20px rgba(37,211,102,0.4);
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -139,5 +139,5 @@ body {
 .glow-border:hover::after { opacity: 1; }
 
 /* ─── Sections ─── */
-.section-pad { padding: 6rem 0; }
-@media (max-width: 768px) { .section-pad { padding: 4rem 0; } }
+.section-pad { padding-top: 6rem; padding-bottom: 6rem; scroll-margin-top: 80px; }
+@media (max-width: 768px) { .section-pad { padding-top: 5rem; padding-bottom: 4rem; scroll-margin-top: 80px; } }

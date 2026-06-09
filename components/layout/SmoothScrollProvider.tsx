@@ -17,7 +17,7 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
     });
 
     window.lenis = lenis;
-
+https://wayanadu-wild-ways.vercel.app/
     // Connect Lenis to GSAP ScrollTrigger so scroll-triggered animations work
     lenis.on('scroll', ScrollTrigger.update);
 

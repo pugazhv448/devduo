@@ -94,8 +94,11 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
-            <div
+            <a
               key={i}
+              href={`https://wa.me/917339097430?text=Hi%20Devduo,%20I'm%20interested%20in%20your%20${encodeURIComponent(service.title)}%20package.`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="service-card glass rounded-2xl p-8 glow-border group flex flex-col h-full cursor-pointer overflow-hidden relative"
               style={{ willChange: 'transform, opacity' }}
             >
@@ -126,7 +129,7 @@ export default function ServicesSection() {
                   {service.price} <span className="text-sm">↗</span>
                 </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

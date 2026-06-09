@@ -28,7 +28,7 @@ export default function Home() {
     <>
       {loaded ? null : <Preloader isLoaded={loaded} />}
 
-      <main className="min-h-screen bg-primary">
+      <main className="min-h-screen bg-primary overflow-x-hidden w-full">
         <Navbar />
         
         <HeroSection />

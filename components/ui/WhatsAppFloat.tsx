@@ -15,8 +15,8 @@ export default function WhatsAppFloat() {
     >
       <svg
         viewBox="0 0 24 24"
-        width="32"
-        height="32"
+        width="38"
+        height="38"
         fill="white"
         xmlns="http://www.w3.org/2000/svg"
       >
