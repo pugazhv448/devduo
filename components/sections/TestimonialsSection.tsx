@@ -24,15 +24,6 @@ const testimonials = [
   },
   {
     id: 3,
-    quote: "Our symposium website was ready in 5 days with a countdown timer, events grid, everything. Devduo understood exactly what a college event site needs.",
-    name: "Rahul M.",
-    business: "Eternix Symposium, Sairam",
-    avatar: "RM",
-    avatarColor: "from-purple-500 to-violet-600",
-    stars: 5,
-  },
-  {
-    id: 4,
     quote: "The landing page they built for our boutique increased our WhatsApp inquiries by 3x in just 2 months. Clean design, super fast, and mobile-perfect.",
     name: "Anitha K.",
     business: "Bloom Boutique, Anna Nagar",
@@ -41,7 +32,7 @@ const testimonials = [
     stars: 5,
   },
   {
-    id: 5,
+    id: 4,
     quote: "Very professional team. Fast delivery, transparent pricing, and the animations on our agency site genuinely impress every client who visits. Highly recommend!",
     name: "Vijay T.",
     business: "NovaBuild Agency, Bengaluru",

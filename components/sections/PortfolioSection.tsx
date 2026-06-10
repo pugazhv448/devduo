@@ -33,19 +33,6 @@ const projects = [
   },
   {
     id: 3,
-    title: "Eternix Symposium",
-    category: "Agency",
-    client: "Sri Sairam Engineering College",
-    location: "Chennai",
-    description: "A dark-themed event symposium website for Eternix'25 — EIE Department. Countdown timer, events grid, schedule page, team section, and animated particle background.",
-    tech: ["WordPress", "Custom CSS", "JavaScript"],
-    image_gradient: "from-purple-900/60 via-blue-900/40 to-gray-900",
-    image: "/images/portfolio/eternix.png",
-    icon: "⚡",
-    url: "https://eternix.in",
-  },
-  {
-    id: 4,
     title: "Wayanad Wild Ways",
     category: "Landing Page",
     client: "Wayanad Wild Ways",
@@ -58,7 +45,7 @@ const projects = [
     url: "#",
   },
   {
-    id: 5,
+    id: 4,
     title: "Neilgen Housing",
     category: "Business",
     client: "Neilgen Housing",
@@ -69,6 +56,32 @@ const projects = [
     image: "/images/portfolio/neilgen.png",
     icon: "🏢",
     url: "https://neilgenhousing.com/",
+  },
+  {
+    id: 5,
+    title: "MediQuick",
+    category: "E-Commerce",
+    client: "MediQuick",
+    location: "Online",
+    description: "A premium health and pharmacy e-commerce platform offering smart drug discovery, dynamic drone delivery tracking, cart features, and interactive dark/light modes.",
+    tech: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
+    image_gradient: "from-blue-900/60 via-cyan-900/40 to-gray-900",
+    image: "/images/portfolio/mediquick.png",
+    icon: "💊",
+    url: "https://mediquick1.vercel.app/",
+  },
+  {
+    id: 6,
+    title: "PK Wedding Invitation",
+    category: "Wedding",
+    client: "Prasanna & Keerthana",
+    location: "Online",
+    description: "A gorgeous, interactive starry-night-themed wedding invitation website. Features a responsive countdown timer, dynamic timeline schedule, couple stories, and integrated digital RSVP.",
+    tech: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+    image_gradient: "from-purple-900/60 via-indigo-900/40 to-gray-900",
+    image: "/images/portfolio/wedding.png",
+    icon: "💍",
+    url: "https://pk--wedding.vercel.app",
   },
 ];
 
@@ -86,7 +99,7 @@ interface ProjectType {
   url: string;
 }
 
-const categories = ['All', 'Business', 'Gym', 'Portfolio', 'Agency', 'Landing Page'];
+const categories = ['All', 'Business', 'Gym', 'Portfolio', 'Landing Page', 'E-Commerce', 'Wedding'];
 
 function ProjectCard({ project, onClick }: { project: ProjectType; onClick: () => void }) {
   const x = useMotionValue(0);
@@ -115,7 +128,7 @@ function ProjectCard({ project, onClick }: { project: ProjectType; onClick: () =
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
-      className="relative aspect-[4/3] rounded-3xl overflow-hidden cursor-pointer group glass border border-accent/20"
+      className="relative aspect-video rounded-3xl overflow-hidden cursor-pointer group glass border border-accent/20"
     >
       {/* Background image instead of gradient */}
       <Image 
@@ -245,19 +258,20 @@ export default function PortfolioSection() {
               </button>
 
               {/* Modal Image */}
-              <div className={`w-full md:w-[55%] aspect-video md:aspect-auto relative flex-shrink-0 bg-primary`}>
-                <Image 
-                  src={selectedProject.image} 
-                  alt={selectedProject.title} 
-                  fill 
-                  sizes="(max-width: 768px) 100vw, 55vw"
-                  className="object-cover object-top opacity-80" 
-                />
-                <div className={`absolute inset-0 bg-gradient-to-br ${selectedProject.image_gradient} mix-blend-overlay opacity-40 z-10 pointer-events-none`} />
+              <div className="w-full md:w-[55%] aspect-video md:aspect-auto relative flex-shrink-0 bg-primary/95 p-3 md:p-6 flex items-center justify-center border-b md:border-b-0 md:border-r border-light/10">
+                <div className="w-full h-full relative rounded-2xl overflow-hidden border border-light/15 shadow-2xl md:min-h-[400px]">
+                  <Image 
+                    src={selectedProject.image} 
+                    alt={selectedProject.title} 
+                    fill 
+                    sizes="(max-width: 768px) 100vw, 55vw"
+                    className="object-cover object-top opacity-95" 
+                  />
+                </div>
               </div>
 
               {/* Modal Content */}
-              <div className="w-full md:w-[45%] p-8 overflow-y-auto flex flex-col custom-scrollbar">
+              <div className="w-full md:w-[45%] p-6 md:p-8 overflow-y-auto flex flex-col custom-scrollbar">
                 <div className="flex items-center gap-2 text-accent/80 text-sm font-semibold tracking-wider font-display mb-4">
                   <span>{selectedProject.icon}</span>
                   <span className="uppercase">{selectedProject.category}</span>
@@ -303,7 +317,9 @@ export default function PortfolioSection() {
                     rel="noopener noreferrer"
                     className="w-full px-6 py-4 rounded-xl bg-[#25D366] text-white text-center font-bold shadow-[0_4px_20px_rgba(37,211,102,0.3)] hover:scale-[1.02] hover:shadow-[0_4px_30px_rgba(37,211,102,0.5)] transition-all duration-300 flex items-center justify-center gap-2"
                   >
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.0003 2.01636C6.47198 2.01636 1.98438 6.50396 1.98438 12.0323C1.98438 13.7997 2.44391 15.4593 3.24867 16.8951L2.03154 21.3436L6.58694 20.1481C7.98687 20.8872 9.58572 21.2894 11.2828 21.2894C17.5255 21.2665 22.0146 16.7789 22.0146 11.249C22.0146 5.72068 17.527 1.23308 11.9987 1.23308V2.01636H12.0003ZM16.8152 14.8878C16.6111 15.4608 15.8078 15.9388 15.176 16.0827C14.7171 16.1843 14.0622 16.2625 11.4116 15.1633C8.42159 13.9213 6.49132 10.8711 6.33703 10.6669C6.18274 10.4627 5.06834 8.98394 5.06834 7.45326C5.06834 5.92257 5.84961 5.17725 6.16738 4.8504M6.48673 4.5427C6.6908 4.33842 7.04283 4.23467 7.35122 4.23467C7.45326 4.23467 7.54512 4.23943 7.625 4.24436C7.81893 4.25458 7.91557 4.2699 8.0435 4.57628C8.19662 4.95423 8.57467 5.86221 8.61494 5.94396C8.6552 6.0257 8.71536 6.14815 8.6552 6.27076C8.59505 6.39336 8.5447 6.46467 8.44265 6.58694C8.34061 6.70938 8.24874 6.79153 8.1467 6.924C8.04466 7.05648 7.93297 7.1895 8.05477 7.39414C8.17658 7.59877 8.57467 8.25203 9.1666 8.78208C9.93233 9.46654 10.5546 9.68114 10.7797 9.77256C11.0048 9.86399 11.1378 9.85437 11.2705 9.71158C11.403 9.5688 11.832 9.06869 11.9753 8.8644C12.1185 8.66012 12.2619 8.68007 12.4552 8.76182C12.6485 8.84357 13.6749 9.35417 13.8887 9.45621C14.1026 9.55826 14.246 9.60942 14.2964 9.69116C14.3467 9.77291 14.3467 10.1504 14.1432 10.7233V10.7233" /></svg>
+                    <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" className="bi bi-whatsapp" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                    </svg>
                     Chat on WhatsApp &rarr;
                   </a>
                 </div>
